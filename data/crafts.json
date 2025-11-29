@@ -1,0 +1,284 @@
+[
+  {
+    "id": 1,
+    "name": "Paper Roll Desk Organizer",
+    "time": 20,
+    "difficulty": "Easy",
+    "materials": ["toilet paper rolls", "glue", "scissors", "cardboard", "paint"],
+    "description": "Upcycle cardboard rolls into a cute desk organizer.",
+    "instructions": [
+      "Cut cardboard into a base shape (circle or rectangle).",
+      "Stand toilet rolls upright and glue them onto the base.",
+      "Paint or decorate as desired.",
+      "Let dry and fill with pens or brushes!"
+    ],
+    "image": "/images/organizer.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Mason Jar Candle Holder",
+    "time": 30,
+    "difficulty": "Easy",
+    "materials": ["mason jar", "twine", "tea light candle", "paint"],
+    "description": "A rustic candle holder using a mason jar.",
+    "instructions": [
+      "Paint or frost the mason jar.",
+      "Wrap twine around the rim in a bow.",
+      "Place candle inside and enjoy the cozy vibe!"
+    ],
+    "image": "/images/candle-jar.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Button Art Canvas",
+    "time": 45,
+    "difficulty": "Medium",
+    "materials": ["buttons", "canvas", "hot glue", "pencil"],
+    "description": "Turn random buttons into beautiful wall art.",
+    "instructions": [
+      "Lightly sketch a shape on the canvas (heart, letter, etc.).",
+      "Glue buttons along the outline.",
+      "Fill in the inside with layered buttons."
+    ],
+    "image": "/images/button-art.jpg"
+  },
+  {
+    "id": 4,
+    "name": "Simple Macrame Keychain",
+    "time": 20,
+    "difficulty": "Easy",
+    "materials": ["macrame cord", "keyring", "scissors"],
+    "description": "Create a trendy knotted keychain.",
+    "instructions": [
+      "Fold cords and attach to keyring using a lark's head knot.",
+      "Create a series of square knots.",
+      "Trim and brush the ends for fringe."
+    ],
+    "image": "/images/macrame.jpg"
+  },
+  {
+    "id": 5,
+    "name": "Wine Cork Coasters",
+    "time": 60,
+    "difficulty": "Medium",
+    "materials": ["wine corks", "hot glue", "knife", "ribbon"],
+    "description": "Recycled wine corks make durable coasters.",
+    "instructions": [
+      "Cut corks in half lengthwise.",
+      "Arrange in a circle or square and glue together.",
+      "Wrap with ribbon for clean edges."
+    ],
+    "image": "/images/cork-coaster.jpg"
+  },
+  {
+    "id": 6,
+    "name": "Fabric Scrap Bookmarks",
+    "time": 10,
+    "difficulty": "Easy",
+    "materials": ["fabric scraps", "ribbon", "scissors", "glue"],
+    "description": "Quick bookmarks using leftover fabric.",
+    "instructions": [
+      "Cut fabric scraps into rectangles.",
+      "Glue ribbon along the top as a pull tab.",
+      "Let dry and enjoy reading!"
+    ],
+    "image": "/images/bookmark.jpg"
+  },
+  {
+    "id": 7,
+    "name": "DIY Photo Magnets",
+    "time": 25,
+    "difficulty": "Easy",
+    "materials": ["small photos", "adhesive magnets", "scissors", "lamination sheet (optional)"],
+    "description": "Personalize your fridge with mini photo magnets!",
+    "instructions": [
+      "Cut photos to your desired size.",
+      "Optional: Laminate for durability.",
+      "Attach magnet to back and press down firmly."
+    ],
+    "image": "/images/magnets.jpg"
+  },
+  {
+    "id": 8,
+    "name": "T-Shirt Tote Bag",
+    "time": 45,
+    "difficulty": "Medium",
+    "materials": ["old t-shirt", "scissors", "needle and thread"],
+    "description": "No-waste tote made from an old shirt.",
+    "instructions": [
+      "Cut off the sleeves and collar.",
+      "Turn inside out and sew or glue the bottom shut.",
+      "Turn right-side out and use as a reusable bag!"
+    ],
+    "image": "/images/tote.jpg"
+  },
+  {
+    "id": 9,
+    "name": "Painted Rock Garden Markers",
+    "time": 30,
+    "difficulty": "Easy",
+    "materials": ["rocks", "acrylic paint", "marker"],
+    "description": "Label herbs or plants with cute painted rocks.",
+    "instructions": [
+      "Clean and dry rocks.",
+      "Paint base colors and let dry.",
+      "Write plant names with marker."
+    ],
+    "image": "/images/rocks.jpg"
+  },
+  {
+    "id": 10,
+    "name": "Tin Can Lantern",
+    "time": 60,
+    "difficulty": "Medium",
+    "materials": ["tin can", "hammer", "nail", "candle", "spray paint"],
+    "description": "Upcycle tins into starry outdoor lanterns.",
+    "instructions": [
+      "Freeze water inside tin can to keep shape.",
+      "Hammer holes in a decorative pattern.",
+      "Paint and place a candle inside."
+    ],
+    "image": "/images/tin-lantern.jpg"
+  },
+  {
+    "id": 11,
+    "name": "Chunky Crochet Coaster",
+    "time": 30,
+    "difficulty": "Easy",
+    "materials": ["chunky yarn", "crochet hook (10mm)"],
+    "description": "A simple crochet circle that doubles as a cozy coaster.",
+    "instructions": [
+      "Make a magic ring and crochet 8 double crochets.",
+      "Increase evenly around until flat.",
+      "Slip stitch to join and weave in ends."
+    ],
+    "image": "/images/crochet-coaster.jpg"
+  },
+  {
+    "id": 12,
+    "name": "Beginner Knit Headband",
+    "time": 90,
+    "difficulty": "Medium",
+    "materials": ["worsted yarn", "knitting needles (US 8)", "yarn needle"],
+    "description": "A cute headband using only knit and purl stitches.",
+    "instructions": [
+      "Cast on 14 stitches.",
+      "Work in 1x1 rib (knit 1, purl 1) until approx. 18 inches.",
+      "Bind off and sew ends together."
+    ],
+    "image": "/images/knit-headband.jpg"
+  },
+  {
+    "id": 13,
+    "name": "Crochet Granny Square",
+    "time": 45,
+    "difficulty": "Medium",
+    "materials": ["acrylic yarn", "crochet hook (5mm)"],
+    "description": "Classic square motif—use for blankets or bags.",
+    "instructions": [
+      "Start with a magic ring.",
+      "Chain 3 and work 2 double crochets, chain 2 for corner.",
+      "Repeat around to form a square, continue for 3-4 rounds."
+    ],
+    "image": "/images/granny-square.jpg"
+  },
+  {
+    "id": 14,
+    "name": "Finger Knit Scarf",
+    "time": 60,
+    "difficulty": "Easy",
+    "materials": ["bulky yarn"],
+    "description": "No needles needed — learn knitting using your hands!",
+    "instructions": [
+      "Create a long chain using finger knitting.",
+      "Continue stitching until desired length.",
+      "Tie off ends securely."
+    ],
+    "image": "/images/finger-knit.jpg"
+  },
+  {
+    "id": 15,
+    "name": "Quick Crochet Scrunchie",
+    "time": 20,
+    "difficulty": "Easy",
+    "materials": ["yarn", "crochet hook (5mm)", "hair elastic"],
+    "description": "Use any leftover yarn to make a cute scrunchie.",
+    "instructions": [
+      "Single crochet around a hair elastic.",
+      "Add double crochet stitches to create ruffles.",
+      "Join and weave in ends."
+    ],
+    "image": "/images/scrunchie.jpg"
+  },
+  {
+    "id": 16,
+    "name": "Mini Knit Mug Cozy",
+    "time": 40,
+    "difficulty": "Easy",
+    "materials": ["yarn", "knitting needles", "button", "yarn needle"],
+    "description": "Keep drinks warm with a small knit sleeve.",
+    "instructions": [
+      "Cast on 12-16 stitches depending on mug.",
+      "Knit in stockinette or rib stitch until fits around mug.",
+      "Sew a button loop and attach button."
+    ],
+    "image": "/images/mug-cozy.jpg"
+  },
+  {
+    "id": 17,
+    "name": "Pom Pom Garland",
+    "time": 25,
+    "difficulty": "Easy",
+    "materials": ["yarn", "string", "scissors", "cardboard (optional)"],
+    "description": "A festive garland made from pom poms.",
+    "instructions": [
+      "Wrap yarn around hand or cardboard.",
+      "Tie center tightly and cut loops.",
+      "Fluff pom poms and string them together."
+    ],
+    "image": "/images/pompom-garland.jpg"
+  },
+  {
+    "id": 18,
+    "name": "Watercolor Quote Art",
+    "time": 35,
+    "difficulty": "Easy",
+    "materials": ["watercolor paint", "brush", "paper", "marker"],
+    "description": "Make inspirational art with minimal supplies.",
+    "instructions": [
+      "Paint a soft watercolor background.",
+      "Let dry completely.",
+      "Write a quote over it with a marker."
+    ],
+    "image": "/images/quote-art.jpg"
+  },
+  {
+    "id": 19,
+    "name": "Recycled Paper Beads",
+    "time": 50,
+    "difficulty": "Medium",
+    "materials": ["magazine pages", "toothpick", "glue", "string"],
+    "description": "Turn old magazines into colorful jewelry beads.",
+    "instructions": [
+      "Cut long triangle strips from magazine pages.",
+      "Roll tightly around a toothpick and glue end.",
+      "String together for bracelets or necklaces."
+    ],
+    "image": "/images/paper-beads.jpg"
+  },
+  {
+    "id": 20,
+    "name": "Crochet Plant Hanger",
+    "time": 75,
+    "difficulty": "Medium",
+    "materials": ["cotton yarn", "crochet hook (6mm)", "small pot"],
+    "description": "Display plants with a cute macrame-style crochet hanger.",
+    "instructions": [
+      "Chain long straps and join in the round.",
+      "Work around creating mesh until pot fits.",
+      "Tie strands at the top for hanging."
+    ],
+    "image": "/images/plant-hanger.jpg"
+  }
+]
+
