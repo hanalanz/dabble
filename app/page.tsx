@@ -1,8 +1,8 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
+import Image from 'next/image';
 import { useRouter } from 'next/navigation';
-import { Header } from '@/components/Header';
 import { MaterialSelector } from '@/components/MaterialSelector';
 import { TimeSelector } from '@/components/TimeSelector';
 import { useApp } from '@/context/AppContext';
@@ -10,6 +10,7 @@ import { useApp } from '@/context/AppContext';
 export default function HomePage() {
   const router = useRouter();
   const { filterState, setFilterState } = useApp();
+  const [logoError, setLogoError] = useState(false);
   
   const handleSearch = () => {
     router.push('/results');
@@ -17,21 +18,54 @@ export default function HomePage() {
   
   return (
     <>
-      <Header />
-      <main className="home-page">
-        <div className="container">
-          <div className="home-hero">
-            <h2 className="hero-title">
-              Wanna <span className="dabble-text">Dabble</span> in a new craft?
+      <main className="min-h-screen py-8">
+        <div className="max-w-7xl mx-auto px-4 md:px-8">
+          <div className="text-center mb-12 py-8">
+            <h2 className="text-4xl md:text-6xl font-semibold mb-4 text-text">
+              Wanna{' '}
+              {!logoError ? (
+                <span className="inline-block align-middle mx-1">
+                  <Image
+                    src="/dabble.svg"
+                    alt="Dabble"
+                    width={180}
+                    height={60}
+                    priority
+                    className="h-auto w-auto max-h-14 max-w-[250px] align-middle object-contain"
+                    onError={() => setLogoError(true)}
+                    unoptimized
+                  />
+                </span>
+              ) : (
+                <span className="inline-flex items-center align-middle mx-1">
+                  <span className="text-[#4A90E2]">D</span>
+                  <span className="text-[#FF6B9D]">a</span>
+                  <span className="text-[#98D8C8]">b</span>
+                  <span className="text-[#F493A9]">b</span>
+                  <span className="text-[#4A90E2]">l</span>
+                  <span className="text-[#98D8C8]">e</span>
+                </span>
+              )}{' '}
+              in a new craft?
             </h2>
-            <p className="hero-subtitle">
+            <p className="text-lg text-text-light max-w-2xl mx-auto leading-relaxed">
               Tell us what materials you have and how much time you've got, 
               and we'll find the perfect craft for you!
             </p>
           </div>
           
-          <div className="home-content">
-            <div className="filters-section">
+          <div className="max-w-4xl mx-auto">
+            <div 
+              className="bg-secondary p-8 md:p-12 rounded-2xl shadow-lg"
+              style={{
+                borderColor: '#000000',
+                borderTopWidth: '2px',
+                borderLeftWidth: '2px',
+                borderBottomWidth: '8px',
+                borderRightWidth: '8px',
+                borderStyle: 'solid'
+              }}
+            >
               <MaterialSelector
                 selected={filterState.materialsHave}
                 onChange={(materials) => 
@@ -48,7 +82,8 @@ export default function HomePage() {
               
               <button
                 onClick={handleSearch}
-                className="btn btn-primary search-btn"
+                className="bg-primary text-white rounded-full border-black border-t-2 border-b-4 border-r-4 border-l-2 w-full py-4 px-8 text-lg font-semibold hover:opacity-90 hover:-translate-y-0.5 transition-transform"
+                style={{ borderRadius: '9999px' }}
                 disabled={filterState.materialsHave.length === 0}
               >
                 find my perfect craft!
@@ -56,85 +91,7 @@ export default function HomePage() {
             </div>
           </div>
         </div>
-        
-        <style jsx>{`
-          .home-page {
-            min-height: calc(100vh - 80px);
-            padding: 2rem 0;
-          }
-          
-          .home-hero {
-            text-align: center;
-            margin-bottom: 3rem;
-            padding: 2rem 0;
-          }
-          
-          .hero-title {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            color: var(--color-text);
-          }
-          
-          .dabble-text {
-            background: linear-gradient(135deg, #4A90E2, #FF6B9D, #FFB6C1, #98D8C8, #4A90E2, #FF6B9D);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-          }
-          
-          .hero-subtitle {
-            font-size: 1.1rem;
-            color: var(--color-text-light);
-            max-width: 600px;
-            margin: 0 auto;
-            line-height: 1.6;
-          }
-          
-          .home-content {
-            max-width: 800px;
-            margin: 0 auto;
-          }
-          
-          .filters-section {
-            background-color: #B0E0E6;
-            padding: 2rem;
-            border-radius: 16px;
-            box-shadow: 0 4px 16px var(--color-shadow);
-          }
-          
-          .search-btn {
-            width: 100%;
-            padding: 1rem 2rem;
-            font-size: 1.1rem;
-            font-weight: 600;
-            margin-top: 1rem;
-            text-transform: lowercase;
-            border-radius: 12px;
-          }
-          
-          .search-btn:disabled {
-            opacity: 0.5;
-            cursor: not-allowed;
-          }
-          
-          .search-btn:not(:disabled):hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 12px rgba(255, 107, 157, 0.3);
-          }
-          
-          @media (min-width: 768px) {
-            .hero-title {
-              font-size: 3.5rem;
-            }
-            
-            .filters-section {
-              padding: 3rem;
-            }
-          }
-        `}</style>
       </main>
     </>
   );
 }
-

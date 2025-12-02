@@ -12,94 +12,84 @@ export function TimeSelector({ selected, onChange }: TimeSelectorProps) {
   const currentTime = selected ?? 60;
   
   const formatTime = (minutes: number) => {
+    // If at the very end (180), show "3+ Hours"
+    if (minutes >= 180) return '3+ Hours';
+    
+    // Show "60 min" when at exactly 60 or close to it (center-ish position)
+    if (minutes >= 55 && minutes <= 65) return '60 min';
+    
+    // For values less than 60, show minutes
     if (minutes < 60) return `${minutes} min`;
-    if (minutes === 60) return '60 min';
-    if (minutes < 120) return `${Math.floor(minutes / 60)} hr ${minutes % 60} min`;
-    return '2+ Hours';
+    
+    // For values greater than 60, show hours and minutes
+    const hours = Math.floor(minutes / 60);
+    const mins = minutes % 60;
+    if (mins === 0) return `${hours} hr`;
+    return `${hours} hr ${mins} min`;
   };
   
   return (
-    <div className="time-selector">
-      <label className="time-selector-label">
+    <div className="mb-8">
+      <label className="block mb-2 text-xl font-semibold text-text">
         <h3>Do you have a moment to spare?</h3>
       </label>
-      <p className="time-instruction">
+      <p className="text-base text-text mb-6">
         Select the range of time you want to spend on your craft.
       </p>
       
-      <div className="time-slider-container">
-        <div className="time-slider-labels">
-          <span className="time-label">15 min</span>
-          <span className="time-label">2+ Hours</span>
-        </div>
-        
-        <div className="time-slider-wrapper">
-          <input
-            type="range"
-            min="15"
-            max="180"
-            step="5"
-            value={currentTime}
-            onChange={(e) => onChange(Number(e.target.value))}
-            className="time-slider"
-          />
-          <div 
-            className="time-slider-value"
-            style={{ left: `${((currentTime - 15) / (180 - 15)) * 100}%` }}
-          >
-            <span className="time-value-text">
-              <span className="clock-icon">🕐</span>
-              {formatTime(currentTime)}
-            </span>
+      <div className="relative">
+        <div className="bg-white border-2 border-black rounded-xl p-4">
+          <div className="relative">
+            <div className="relative mb-3">
+              {/* Background track (lighter pink) */}
+              <div className="absolute top-1/2 -translate-y-1/2 w-full h-2 rounded-full bg-[#FFB6C1] z-0"></div>
+              
+              {/* Selected portion (darker pink) */}
+              <div 
+                className="absolute top-1/2 -translate-y-1/2 h-2 rounded-l-full bg-primary z-10"
+                style={{ width: `${((currentTime - 15) / (180 - 15)) * 100}%` }}
+              ></div>
+              
+              {/* Slider input */}
+              <input
+                type="range"
+                min="15"
+                max="180"
+                step="5"
+                value={currentTime}
+                onChange={(e) => onChange(Number(e.target.value))}
+                className="time-slider w-full h-2 rounded outline-none relative z-20 bg-transparent"
+              />
+            </div>
+            
+            {/* Time labels directly under the slider */}
+            <div className="relative">
+              <div className="flex justify-between text-sm text-text mb-2">
+                <span>15 min</span>
+                <span>3+ Hours</span>
+              </div>
+              
+              {/* Time indicator positioned under the slider, following the thumb */}
+              <div className="relative h-8 mt-1">
+                <div 
+                  className="absolute -translate-x-1/2"
+                  style={{ left: `${((currentTime - 15) / (180 - 15)) * 100}%` }}
+                >
+                  <span className="flex items-center gap-1 bg-white px-3 py-1.5 rounded-lg text-sm font-semibold text-text border-2 border-black whitespace-nowrap">
+                    <span className="text-base">🕐</span>
+                    {formatTime(currentTime)}
+                  </span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
       
       <style jsx>{`
-        .time-selector {
-          margin-bottom: 2rem;
-        }
-        
-        .time-selector-label {
-          display: block;
-          margin-bottom: 0.5rem;
-          font-size: 1.1rem;
-          font-weight: 600;
-          color: var(--color-text);
-        }
-        
-        .time-instruction {
-          font-size: 0.95rem;
-          color: var(--color-text-light);
-          margin-bottom: 1.5rem;
-        }
-        
-        .time-slider-container {
-          position: relative;
-        }
-        
-        .time-slider-labels {
-          display: flex;
-          justify-content: space-between;
-          margin-bottom: 0.5rem;
-          font-size: 0.9rem;
-          color: var(--color-text-light);
-        }
-        
-        .time-slider-wrapper {
-          position: relative;
-          padding: 1rem 0 2rem;
-        }
-        
         .time-slider {
-          width: 100%;
-          height: 8px;
-          border-radius: 4px;
-          background: linear-gradient(to right, #FF6B9D 0%, #FFB6C1 100%);
-          outline: none;
           -webkit-appearance: none;
-          position: relative;
-          z-index: 1;
+          appearance: none;
         }
         
         .time-slider::-webkit-slider-thumb {
@@ -130,31 +120,6 @@ export function TimeSelector({ selected, onChange }: TimeSelectorProps) {
           height: 8px;
           border-radius: 4px;
           background: linear-gradient(to right, #FF6B9D 0%, #FFB6C1 100%);
-        }
-        
-        .time-slider-value {
-          position: absolute;
-          top: 0;
-          transform: translateX(-50%);
-          z-index: 3;
-        }
-        
-        .time-value-text {
-          display: flex;
-          align-items: center;
-          gap: 0.25rem;
-          background-color: white;
-          padding: 0.5rem 0.75rem;
-          border-radius: 8px;
-          font-size: 0.9rem;
-          font-weight: 600;
-          color: var(--color-text);
-          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-          white-space: nowrap;
-        }
-        
-        .clock-icon {
-          font-size: 1rem;
         }
       `}</style>
     </div>
